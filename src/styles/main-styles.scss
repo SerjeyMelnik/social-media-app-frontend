@@ -1,0 +1,22 @@
+
+html[data-theme='light']{
+	--body-background-color:white;
+}
+
+html[data-theme='dark']{
+	--body-background-color:#1F1F39;
+
+}
+*{
+	box-sizing: border-box;
+	transition: $switch-theme-transition;
+}
+body{
+	margin: 0;
+	padding: 0;
+	background: var(--body-background-color);
+	transition: $switch-theme-transition;
+}
+main{
+	@include container();
+}
