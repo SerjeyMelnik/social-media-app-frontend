@@ -1,11 +1,12 @@
-import React from 'react';
-
-import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
-import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import React, { useState } from 'react';
 import LikeBtn from './LikeBtn';
 import CommentsBtn from './CommentsBtn';
-
+import { comments_test } from '../../utils/testData';
+import Comments from './Comments';
+import {Transition} from 'react-transition-group'
 const Post = () => {
+	const [showPostComments,setShowPostComments] = useState(true);
+	const comments = [...comments_test];
 	return ( 
 			<div className="post">
 				<div className="post_user-info">
@@ -28,8 +29,13 @@ const Post = () => {
 				</div>
 				<div className="post_info">
 					<LikeBtn/>
-					<CommentsBtn/>
+					<CommentsBtn setShowPostComments={setShowPostComments}/>
 				</div>
+				
+						<Comments comments={comments} isShow={showPostComments} className={showPostComments ? 'show' : 'hide'}/>
+					
+
+
 			</div>
 	 );
 }

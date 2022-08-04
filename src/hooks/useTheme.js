@@ -7,7 +7,6 @@ const useTheme = () => {
 	const localStorageTheme = localStorage.getItem('app-theme');
 
 	const [theme, setTheme] = useState(localStorageTheme || defaultTheme);
-	console.log(defaultTheme);
 	useLayoutEffect(() => {
 		document.documentElement.setAttribute('data-theme', theme);
 		localStorage.setItem('app-theme', theme)

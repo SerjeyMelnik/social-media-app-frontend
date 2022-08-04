@@ -1,6 +1,6 @@
 html[data-theme='light']{
 	--post-background-color:#FFFFFF;
-	--post-shadow-color:rgba(0, 0, 0, 0.25);
+	--post-shadow-color:rgba(0, 0, 0, 0.21);
 	
 	//text
 	--post-user-name-color:#1F1F39;
@@ -8,10 +8,14 @@ html[data-theme='light']{
 	--post-content-description-color: #858597;
 
 	//like
-	--like-btn-color:#FF6905;
+	//--like-btn-color:#FF6905;
+	--like-btn-color:red;
 
 	//comments btn
 	--comments-btn-color:#3D5CFF;
+
+	//number 
+	--number-color:#B8B8D2;
 
 }
 html[data-theme='dark']{
@@ -24,22 +28,30 @@ html[data-theme='dark']{
 	--post-content-description-color: #FFFFFF;	
 
 	//like
-	--like-btn-color:#FF6905;
+	//--like-btn-color:#FF6905;
+	--like-btn-color:red;
+
 
 	//comments btn
 	--comments-btn-color:#3D5CFF;
+
+	//number 
+	--number-color:#B8B8D2;
 }
 
 
-
+.posts_container{
+	width: 50%;
+	margin: auto;
+}
 .post{
-	width: 60%;
+	width: 100%;
 	margin: 20px auto;
 	border-radius: 20px;
 	background: var(--post-background-color);
-	box-shadow: 0px 4px 4px var(--post-shadow-color);
+	box-shadow: 0px 4px 10px var(--post-shadow-color);
 	padding: 20px;
-	
+	overflow: hidden;
 	&_user{
 		&-info{
 			display: flex;
@@ -91,21 +103,22 @@ html[data-theme='dark']{
 			border-radius: 15px;
 		}
 	}
+	.post_button{
+		padding: 0;
+		line-height: 0.5;
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		&-svg{
+			font-size: 2.5em;
+		}
+	}
 	&_info{
 		display: flex;
 		gap: 20px;
 		padding: 10px 0;
-		.post_button{
-			padding: 0;
-			line-height: 0.5;
-			cursor: pointer;
-			background-color: transparent;
-			border: none;
-			outline: none;
-			&-svg{
-				font-size: 2.5em;
-			}
-		}
+		
 		.like_btn{
 			&:active{
 				transform: scale(0.8);
@@ -129,6 +142,14 @@ html[data-theme='dark']{
 				color: var(--comments-btn-color);
 
 			}
+		}
+		.number{
+			font-family: $Poppins;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 15px;
+			line-height: 15px;
+			color: var(--number-color);
 		}
 	}
 }

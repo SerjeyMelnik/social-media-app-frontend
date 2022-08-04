@@ -9,7 +9,7 @@ const LikeBtn = () => {
 	}
 	return ( 
 		<div className="like_btn-wrapper ">
-			<button className='like_btn post_button' onClick={toggleLike}> 
+			<button className='like_btn post_button' onClick={toggleLike} title={isLiked ? 'unlike' : 'like'}> 
 					{	
 						isLiked 
 						?
@@ -17,7 +17,9 @@ const LikeBtn = () => {
 						:
 						<FavoriteRoundedIcon className='like_btn-svg post_button-svg' />
 					}
+					
 			</button>
+			<span className='number like-number'>15</span>
 		</div>
 	 );
 }

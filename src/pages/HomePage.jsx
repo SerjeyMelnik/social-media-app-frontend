@@ -3,8 +3,11 @@ import Post from '../components/Post/Post';
 
 const HomePage = () => {
 	return ( 
-
-		<Post/>
+		<div className="posts_container">
+			<Post/>
+			<Post/>
+		</div>
+		
 	 );
 }
  

@@ -1,0 +1,159 @@
+html[data-theme='light']{
+
+	//comment content
+	--comment-content-body-color:#858597;
+	--comment-posted-date-color:#FF6905;
+
+	--comments-scrollbar-color:rgba(192, 192, 192, 0.2);
+	--comments-scrollbar-thumb-color:#85859744;
+
+
+	//comment form
+	--comment-send-button-svg-color:#3D5CFF;
+	--comment-form-shadow-color:rgb(0 0 0 / 7%);
+	
+
+	
+
+}
+html[data-theme='dark']{
+
+	//comment content
+	--comment-content-body-color:#ffffff8a;
+	--comment-posted-date-color:#ff8f05;
+	
+	//comment form
+	--comment-send-button-svg-color:#3D5CFF;
+	--comment-form-shadow-color:rgb(255 254 254 / 7%);
+
+	--comments-scrollbar-color:rgba(192, 192, 192, 0.2);
+	--comments-scrollbar-thumb-color:rgba(255, 255, 255, 0.26);
+
+
+}
+
+
+
+
+.comments{
+	margin-top: 10px;
+	max-height: 250px;
+	overflow-y: auto;
+	padding-right: 10px;
+	&::-webkit-scrollbar{
+		width: 5px;
+		background-color: var(--comments-scrollbar-color);
+	}
+	
+	&::-webkit-scrollbar-thumb {
+		background: var(--comments-scrollbar-thumb-color); 
+		border-radius: 3px;
+	  }
+	 
+}
+
+.comment{
+	display: flex;
+	padding: 5px 0;
+	
+	&_content{
+
+	}
+	&_body{
+		margin: 5px 0;
+		font-family: $Poppins;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 18px;
+		color: var(--comment-content-body-color);
+	}
+	&_posted-date{
+		font-family: $Poppins;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 18px;
+		margin: 0;
+		color:var(--comment-posted-date-color);
+	}
+	.author{
+
+		&_info{
+			display: flex;
+			justify-content: space-between;
+		}
+		&_avatar{
+			width: 40px;
+			margin-right: 10px;
+			&-img{
+				width: 40px;
+				border-radius:50%;
+			}
+		}
+		&_name{
+			font-family: $Poppins;
+			font-style: normal;
+			font-weight: 700;
+			font-size: 15px;
+			line-height: 18px;
+			margin: 5px 0;
+			color: var(--post-user-name-color);
+		}
+	}
+}
+
+
+//comment form
+
+.comment_form-wrapper{
+	margin: 20px -20px -20px -20px;
+	padding: 20px;
+	box-shadow: 0px -4px 10px var(--comment-form-shadow-color);
+	display: flex;
+	align-items: center;
+	
+	
+}
+.comment_input-wrapper{
+	width: 100%;
+	padding-right:20px;
+}
+.send_comment-button{
+	&:hover{
+
+	}
+	.comment_btn-svg{
+		color: var(--comment-send-button-svg-color);
+	}
+}
+
+
+.comments_wrapper{
+	transition: 0.5s;
+	&.show{
+		height: 325px;
+		opacity: 1;
+	}
+	&.hide{
+		height: 0px;
+		opacity: 0;
+		overflow: hidden;
+	}
+	
+  }
+//animations
+
+@keyframes show_hide {
+	0%{
+		max-height: 0px;
+	}
+	100%{
+		max-height: 300px;
+	}
+}
+
+
+
+
+
