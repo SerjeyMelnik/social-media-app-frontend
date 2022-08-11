@@ -2,6 +2,8 @@
 import NavigationPanel from './components/Navigation/NavigationPanel';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import RegistrationPage from './pages/RegistrationPage';
+import LoginPage from './pages/LoginPage';
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
         <NavigationPanel />
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='/registration' element={<RegistrationPage />} />
+          <Route path='/login' element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
 

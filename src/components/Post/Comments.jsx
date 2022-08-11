@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import LeaveTheCommentForm from './LeaveTheCommentForm';
 
 const Comments = ({comments,isShow,className}) => {
 	 const comments_wrapper = useRef(null);
-	// console.log(comments_wrapper.current.offsetHeight);
-	// const heightEl = comments_wrapper.current.offsetHeight;
-	// const style = isShow ? {height:heightEl} : null;
+	useEffect(()=>{
+		console.log(comments_wrapper.current.offsetHeight);
+	},[])
 	return (
 		
 		<div className={`comments_wrapper ${className}`} 
@@ -24,7 +24,7 @@ const Comments = ({comments,isShow,className}) => {
 									<h2 className='author_name'>{comment.author.name}</h2>
 									<span className='comment_posted-date'>{comment.postedDate}</span>
 								</div>
-								<p className='comment_body'>{comment.comment}</p>
+								<p className='comment_body'>{comment.comment} &#128513;</p>
 							</div>
 						</div>
 						) :

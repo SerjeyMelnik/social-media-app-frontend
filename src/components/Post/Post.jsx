@@ -5,7 +5,7 @@ import { comments_test } from '../../utils/testData';
 import Comments from './Comments';
 import {Transition} from 'react-transition-group'
 const Post = () => {
-	const [showPostComments,setShowPostComments] = useState(true);
+	const [showPostComments,setShowPostComments] = useState(false);
 	const comments = [...comments_test];
 	return ( 
 			<div className="post">
@@ -31,8 +31,12 @@ const Post = () => {
 					<LikeBtn/>
 					<CommentsBtn setShowPostComments={setShowPostComments}/>
 				</div>
-				
-						<Comments comments={comments} isShow={showPostComments} className={showPostComments ? 'show' : 'hide'}/>
+				{
+					showPostComments ?
+					<Comments comments={comments} isShow={showPostComments} className={showPostComments ? 'show' : 'hide'}/>
+					:
+					null
+				}
 					
 
 

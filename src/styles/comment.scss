@@ -7,13 +7,9 @@ html[data-theme='light']{
 	--comments-scrollbar-color:rgba(192, 192, 192, 0.2);
 	--comments-scrollbar-thumb-color:#85859744;
 
-
 	//comment form
 	--comment-send-button-svg-color:#3D5CFF;
 	--comment-form-shadow-color:rgb(0 0 0 / 7%);
-	
-
-	
 
 }
 html[data-theme='dark']{
@@ -28,8 +24,6 @@ html[data-theme='dark']{
 
 	--comments-scrollbar-color:rgba(192, 192, 192, 0.2);
 	--comments-scrollbar-thumb-color:rgba(255, 255, 255, 0.26);
-
-
 }
 
 
@@ -131,12 +125,13 @@ html[data-theme='dark']{
 
 .comments_wrapper{
 	transition: 0.5s;
+	
 	&.show{
-		height: 325px;
+		//height: 325px;
 		opacity: 1;
 	}
 	&.hide{
-		height: 0px;
+		//height: 0px;
 		opacity: 0;
 		overflow: hidden;
 	}
@@ -152,8 +147,6 @@ html[data-theme='dark']{
 		max-height: 300px;
 	}
 }
-
-
 
 
 

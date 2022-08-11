@@ -10,13 +10,16 @@ html[data-theme='dark']{
 *{
 	box-sizing: border-box;
 	transition: $switch-theme-transition;
-}
-body{
 	margin: 0;
 	padding: 0;
+}
+body{
+	
 	background: var(--body-background-color);
 	transition: $switch-theme-transition;
 }
 main{
 	@include container();
+	padding-top: 40px ;
+	padding-bottom: 40px ;
 }
